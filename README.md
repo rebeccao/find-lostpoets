@@ -1,6 +1,6 @@
-# Welcome to Remix!
+# The start of Find LostPoets!
 
-- [Remix Docs](https://remix.run/docs)
+- Built on Remix Framework 
 
 ## Development
 
