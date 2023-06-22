@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model poets {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  age                Float?
+  age_count          Float?
+  breed              String?
+  breed_count        Float?
+  ego                String?
+  ego_count          Float?
+  gen0_image_url     String
+  gen0_thumbnail_url String
+  gen1_image_url     String
+  genre              String?
+  genre_count        Float?
+  infuence           String
+  latent             String?
+  latent_count       Float?
+  lexicon_count      Int
+  named              Boolean?
+  origin             String
+  origin_count       Float
+  owner_address      String
+  owner_username     String?
+  poem               String?
+  poet_id            Int
+  poet_name          String
+  polarity           String?
+  polarity_count     Float?
+  prime              Int
+  rewrites           Int
+  word_count         Int
+}
