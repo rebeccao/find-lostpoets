@@ -7,7 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model poets {
+//model poets {
+model poet {
   id                 String   @id @default(auto()) @map("_id") @db.ObjectId
   age                Float?
   age_count          Float?
