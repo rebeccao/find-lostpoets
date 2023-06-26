@@ -7,35 +7,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-//model poets {
 model poet {
-  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
-  age                Float?
-  age_count          Float?
-  breed              String?
-  breed_count        Float?
-  ego                String?
-  ego_count          Float?
-  gen0_image_url     String
-  gen0_thumbnail_url String
-  gen1_image_url     String
-  genre              String?
-  genre_count        Float?
-  infuence           String
-  latent             String?
-  latent_count       Float?
-  lexicon_count      Int
-  named              Boolean?
-  origin             String
-  origin_count       Float
-  owner_address      String
-  owner_username     String?
-  poem               String?
-  poet_id            Int
-  poet_name          String
-  polarity           String?
-  polarity_count     Float?
-  prime              Int
-  rewrites           Int
-  word_count         Int
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  age     Float?
+  ageCnt  Float?
+  brd     String?
+  brdCnt  Float?
+  ego     String?
+  egoCnt  Float?
+  g0ThUrl String?
+  g0Url   String?
+  g1Url   String
+  gen     String?
+  genCnt  Float?
+  infl    String
+  lat     String?
+  latCnt  Float?
+  lexCnt  Int
+  named   Boolean?
+  oAddr   String?
+  oNam    String?
+  ori     String
+  oriCnt  Float?
+  pNam    String
+  pid     Int
+  poem    String?
+  pol     String?
+  polCnt  Float?
+  prim    Int
+  rewrCnt Int
+  wrdCnt  Int
 }

@@ -1,11 +1,16 @@
 // app/routes/_index.tsx
 import type { LoaderFunction } from '@remix-run/node'
+import { json } from '@remix-run/node'
 import { Layout } from '~/components/layout'
 import { SearchPanel } from '~/components/search-panel'
+import { getPoets } from '~/utils/poet.server'
 
+// Code run within the loader function is not exposed to the client-side code 
 export const loader: LoaderFunction = async ({ request }) => {
-  //await requireUserId(request)
-  return null // <- A loader always has to return some value, even if that is null
+  const poets = await getPoets()
+  console.log({poets})
+  return json({poets})
+  //return null
 }
 
 export default function Home() {
