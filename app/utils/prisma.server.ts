@@ -11,10 +11,23 @@ if (process.env.NODE_ENV === 'production') {
   prisma.$connect()
 } else {
   if (!global.__db) {
-    global.__db = new PrismaClient()
+    global.__db = new PrismaClient({
+      log: [
+        {
+          emit: 'stdout',
+          level: 'query',
+        },
+        "info",
+        "warn",
+        "error",
+      ],
+    });
+    
     global.__db.$connect()
+    console.log("New Prisma connect")
   }
   prisma = global.__db
+  console.log("Made it here")
 }
 
 export { prisma }

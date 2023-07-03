@@ -1,5 +1,7 @@
 // app/components/search-panel.tsx
-export function SearchPanel() {
+import type { Poet } from '@prisma/client'
+
+export function SearchPanel({ poets }: { poets: Poet[] }) {
     return (
       <div className="w-1/6 bg-gray-200 flex flex-col">
         <div className="text-center bg-gray-300 h-20 flex items-center justify-center">
@@ -7,6 +9,9 @@ export function SearchPanel() {
         </div>
         <div className="flex-1 overflow-y-scroll py-4 flex flex-col gap-y-10">
           <p>Filters go here</p>
+          {poets?.map((poet) => (
+            <div key={poet.pid}>{poet.pNam} </div>
+          ))}
         </div>
         <div className="text-center p-6 bg-gray-300">
           {/*

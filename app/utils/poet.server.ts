@@ -1,11 +1,21 @@
 // app/utils/user.server.ts
-import { prisma } from './prisma.server'
+import { prisma } from '~/utils/prisma.server'
+
+export const getPoetCount = async () => {
+    return prisma.poet.count()
+  }
+  
+export const getOnePoet = async () => {
+  return prisma.poet.findUnique ({
+    where: {
+      id: '1'
+    }
+  })
+}
 
 export const getPoets = async () => {
-  return prisma.poet.findMany({
-    where: {
-      pid: 20007,
-    }
+  return prisma.poet.findMany ({
+    take: 4,
   })
 }
 
